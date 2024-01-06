@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="896.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CTHeadViewer">
+   <center>
+      <HBox alignment="CENTER" prefHeight="391.0" prefWidth="896.0" spacing="115.0" style="-fx-background-color: darkgrey;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="topView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" scaleX="1.75" scaleY="1.75" scaleZ="1.75">
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </HBox.margin></ImageView>
+            <ImageView fx:id="frontView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" scaleX="1.75" scaleY="1.75" scaleZ="1.75">
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </HBox.margin></ImageView>
+            <ImageView fx:id="sideView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" scaleX="1.75" scaleY="1.75" scaleZ="1.75">
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </HBox.margin></ImageView>
+         </children>
+      </HBox>
+   </center>
+   <bottom>
+      <VBox prefHeight="150.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="105.0" prefWidth="896.0" spacing="20.0" style="-fx-background-color: lightgrey;">
+               <children>
+                  <RadioButton mnemonicParsing="false" onAction="#showDiffuseShading" text="Diffuse Shading">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="renderOptions" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton mnemonicParsing="false" onAction="#setDefaultSlices" text="Slices" toggleGroup="$renderOptions" />
+                  <RadioButton layoutX="10.0" layoutY="38.0" mnemonicParsing="false" onAction="#updateVolumeRenders" text="Volume Rendering" toggleGroup="$renderOptions" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="102.0" prefWidth="896.0" spacing="15.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="84.0" prefWidth="195.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Top" textAlignment="CENTER" />
+                        <Slider fx:id="topSlider" blockIncrement="1.0" majorTickUnit="1.0" max="10.0" minorTickCount="0" snapToTicks="true" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="84.0" prefWidth="195.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Front" textAlignment="CENTER" />
+                        <Slider fx:id="frontSlider" blockIncrement="1.0" majorTickUnit="1.0" max="10.0" minorTickCount="0" snapToTicks="true" />
+                     </children>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="84.0" prefWidth="195.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Side" textAlignment="CENTER" />
+                        <Slider fx:id="sideSlider" blockIncrement="1.0" majorTickUnit="1.0" max="10.0" minorTickCount="0" snapToTicks="true" />
+                     </children>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <VBox alignment="CENTER" prefHeight="84.0" prefWidth="195.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Skin Opacity" textAlignment="CENTER" />
+                        <Slider fx:id="skinOpacitySlider" blockIncrement="0.05" majorTickUnit="0.1" max="1.0" minorTickCount="0" showTickLabels="true" value="0.12" />
+                     </children>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="84.0" prefWidth="195.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Light Source" textAlignment="CENTER" />
+                        <Slider fx:id="lightSourceLocationSlider" blockIncrement="0.25" majorTickUnit="20.0" max="360.0" minorTickCount="1" showTickLabels="true" snapToTicks="true" />
+                     </children>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                  </VBox>
+                  <CheckBox fx:id="diffuseDebugCheckbox" mnemonicParsing="false" text="Diffuse Shading - Show normals as color" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>
