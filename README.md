@@ -18,4 +18,4 @@ Simplest one, for a given "layer" of the data, render the pixel from black to wh
 
 ![Slides](img/slides.gif)
 
-*This project was completed in spring 2021 as part of the Computer Graphics module at Swansea university and was uploaded to GitHub in 2024.
+*This project was completed in spring 2021 as part of the Computer Graphics module at Swansea university and was uploaded to GitHub in 2024 in order to avoid academic misconduct.
